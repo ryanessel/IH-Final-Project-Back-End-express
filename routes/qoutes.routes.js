@@ -18,13 +18,12 @@ Quote.find()
 //GET QUOTE DETAILS ID
 router.get("/quote/:quoteId", (req, res, next) => {
     const { quoteId } = req.params;
-console.log("quoteID",quoteId)
+
     
     Quote.findById(quoteId)
     .populate("quoteParts.part") // the parts that exist 
     .then((theQuote) => { 
-        console.log("THEQYOTE", theQuote)
-
+      
 
 //      const theQty =  theQuote.quoteParts[0].qty
 //      const theSell = theQuote.quoteParts[0].part.sell
@@ -117,7 +116,7 @@ console.log("quoteID",quoteId)
             res.status(400).json({message: "Specified id is not valid (may not exist)"});
             return;
         }
-console.log("PUT THING",req.body)
+
      
     //...If it the id does exist it will find and update the projcet. havint "new: true " will show the page wit hthe updated info.
         Quote.findByIdAndUpdate(quoteId, {  

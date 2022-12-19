@@ -13,11 +13,11 @@ const isAuthenticated = jwt({
 
 //function used to extract JWT token from the request's "Authorization" headers
 function getTokenFromHeaders (req) {
-    console.log("FUnction Running")
+
     //Check if token is available on the request Headers
     if (req.headers.authorization && req.headers.authorization.split(" ")[0] === "Bearer"
     ) { 
-        console.log("HELLO")
+    
 
         //Get encoded token string and return it
         const token = req.headers.authorization.split(" ")[1];
