@@ -36,6 +36,7 @@ const quoteSchema = new Schema ({
   
 
     notes: String,
+    leadtime: String,
 
 
 

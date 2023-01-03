@@ -82,7 +82,8 @@ router.get("/quote/:quoteId", (req, res, next) => {
         author,
 
         quoteParts,
-        totalSell
+        totalSell,
+        leadtime
         
         } = req.body;
         
@@ -99,7 +100,8 @@ router.get("/quote/:quoteId", (req, res, next) => {
             notes,
             author,
             quoteParts,
-            totalSell
+            totalSell,
+            leadtime
         })
             .then((newQuote) => res.json(newQuote))
 
